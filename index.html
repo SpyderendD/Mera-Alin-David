@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="ro">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mera Alin David // Spyderend</title>
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="dark-mode">
+    <!-- FUNDALUL TĂU ORIGINAL - ZERO MODIFICĂRI -->
+    <div class="container"></div>
+
+    <svg width="0" height="0" aria-hidden="true">
+      <filter id="sketchy">
+        <feTurbulence
+          type="turbulence"
+          baseFrequency="0.035 0.042"
+          numOctaves="4"
+          result="noise"
+          seed="42"
+        ></feTurbulence>
+        <feDisplacementMap
+          in="SourceGraphic"
+          in2="noise"
+          scale="4.5"
+          xChannelSelector="R"
+          yChannelSelector="G"
+        ></feDisplacementMap>
+      </filter>
+      <filter id="sketchy-sm">
+        <feTurbulence
+          type="turbulence"
+          baseFrequency="0.06"
+          numOctaves="3"
+          result="noise"
+          seed="7"
+        ></feTurbulence>
+        <feDisplacementMap
+          in="SourceGraphic"
+          in2="noise"
+          scale="2.5"
+          xChannelSelector="R"
+          yChannelSelector="G"
+        ></feDisplacementMap>
+      </filter>
+    </svg>
+
+    <div class="ui-container">
+      <!-- NAVBAR - CENTRAT MATEMATIC -->
+      <nav class="glass top-nav">
+        <div class="nav-left">
+          <div class="brand">SPYDEREND <small>Mera Alin David</small></div>
+        </div>
+        <div class="nav-center">
+          <a href="#proiecte">PROIECTE</a>
+          <a href="https://invatam-impreuna.vercel.app/">ÎNVĂȚĂM ÎMPREUNĂ</a>
+        </div>
+        <div class="nav-right">
+          <label class="theme-switch">
+            <input
+              class="theme-switch__checkbox"
+              type="checkbox"
+              id="mode-toggle"
+              checked
+              aria-label="Comutator mod întunecat/luminos"
+              title="Comutator mod întunecat/luminos"
+            />
+            <div class="theme-switch__container">
+              <div class="theme-switch__clouds"></div>
+              <div class="theme-switch__circle-container">
+                <div class="theme-switch__sun-moon-container">
+                  <div class="theme-switch__moon">
+                    <div class="theme-switch__spot"></div>
+                    <div class="theme-switch__spot"></div>
+                    <div class="theme-switch__spot"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </label>
+        </div>
+      </nav>
+
+      <main class="panoramic-view">
+        <!-- BIO -->
+        <section class="island bio-island glass">
+          <span class="label">Salut, sunt Alin David.</span>
+          <h1>
+            Îmi place să
+            <span class="accent">înțeleg cum funcționează lucrurile.</span>
+          </h1>
+          <p>
+            Am început să programez din curiozitate, iar acum învăț construind
+            proiecte care îmi sunt cu adevărat utile.
+          </p>
+          <div class="widget-stack">
+            <a
+              href="https://sweet-cakes-gabriela.vercel.app/"
+              class="w-item glass"
+              >🧁 Sweet Cakes</a
+            >
+            <a
+              href="https://www.dimensionare-gaze-naturale.ro/"
+              class="w-item glass"
+              >⚙️ Gaze Naturale</a
+            >
+          </div>
+        </section>
+
+        <!-- CERCUL CENTRAL - ALINIERE FIXĂ -->
+        <section id="proiecte" class="island focal-island glass">
+          <div class="focal-content">
+            <div class="floating-books">📚</div>
+            <h3>Învățăm Împreună</h3>
+            <p>Platformă gratuită pentru elevi.</p>
+            <a
+              href="https://invatam-impreuna.vercel.app/"
+              class="uiverse-launch"
+            >
+              <span>Lansează</span>
+            </a>
+          </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section class="island contact-island glass">
+          <p class="label">HAI SĂ VORBIM</p>
+
+          <div class="social-orbit">
+            <!-- Instagram -->
+            <a
+              href="https://www.instagram.com/spyder.end/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="social-card social-instagram"
+              aria-label="Instagram"
+              title="Instagram"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2Zm0 2A3.75 3.75 0 0 0 4 7.75v8.5A3.75 3.75 0 0 0 7.75 20h8.5A3.75 3.75 0 0 0 20 16.25v-8.5A3.75 3.75 0 0 0 16.25 4h-8.5ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm5.25-3.5a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5Z"
+                />
+              </svg>
+            </a>
+
+            <!-- Facebook -->
+            <a
+              href="https://www.facebook.com/profile.php?id=61574503234752"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="social-card social-facebook"
+              aria-label="Facebook"
+              title="Facebook"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M13.5 21v-8h2.75l.5-3H13.5V8.25c0-.9.3-1.5 1.5-1.5h1.75V4.1c-.3-.05-1.3-.1-2.45-.1-2.4 0-4.05 1.46-4.05 4.15V10H7.5v3h2.75v8h3.25Z"
+                />
+              </svg>
+            </a>
+
+            <!-- YouTube -->
+            <a
+              href="https://www.youtube.com/@Spyderend_"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="social-card social-youtube"
+              aria-label="YouTube"
+              title="YouTube"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.6 3.5 12 3.5 12 3.5s-7.6 0-9.4.6A3 3 0 0 0 .5 6.2C0 8 0 12 0 12s0 4 .5 5.8a3 3 0 0 0 2.1 2.1c1.8.6 9.4.6 9.4.6s7.6 0 9.4-.6a3 3 0 0 0 2.1-2.1c.5-1.8.5-5.8.5-5.8s0-4-.5-5.8ZM9.5 15.5v-7l6.5 3.5-6.5 3.5Z"
+                />
+              </svg>
+            </a>
+
+            <!-- TikTok -->
+            <a
+              href="https://www.tiktok.com/@spyderend3"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="social-card social-tiktok"
+              aria-label="TikTok"
+              title="TikTok"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M16.6 2c.25 2.05 1.4 3.65 3.4 4.25v3.1c-1.55-.05-2.95-.5-4.15-1.3v7.05A6.9 6.9 0 1 1 9.9 8.25v3.2a3.75 3.75 0 1 0 2.8 3.65V2h3.9Z"
+                />
+              </svg>
+            </a>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer-container">
+        <div class="footer-pill glass">
+          <p>
+            © <span id="year"></span> Mera Alin David. Învățăm, construim,
+            repetăm.
+          </p>
+        </div>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
