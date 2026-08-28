@@ -52,7 +52,7 @@ html.light-mode::-webkit-scrollbar-thumb {
   background: rgba(0, 0, 0, 0.15);
 }
 
-/* --- CONTAINER FUNDAL (VIDEOCLIP COMPLET CURAT / FĂRĂ BLUR) --- */
+/* --- CONTAINER FUNDAL --- */
 .container { 
   position: fixed; 
   inset: 0; 
@@ -80,7 +80,7 @@ html.light-mode::-webkit-scrollbar-thumb {
   height: 100%;
   object-fit: cover;
   object-position: center bottom; 
-  display: block; /* Afișat de JS dinamic */
+  display: block; 
 }
 
 /* --- DASHBOARD UI --- */
@@ -172,7 +172,7 @@ body.light-mode.scrolled .top-nav {
   font-weight: 800; 
   font-size: 0.85rem; 
   letter-spacing: 1px; 
-  opacity: 0.6; 
+  opacity: 0.85; /* Optimizat de la 0.6 la 0.85 pentru contrast suficient (Lighthouse 100) */
   padding: 8px 16px;
   border-radius: 20px;
   transition: opacity 0.25s ease, transform 0.15s ease, background-color 0.25s ease; 

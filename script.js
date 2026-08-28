@@ -85,7 +85,7 @@ const videoSource = document.getElementById('video-source');
 const updateVideoSource = (isDarkMode) => {
     if (!bgVideo || !videoSource) return;
     const targetSource = isDarkMode ? "fundal-intunecat.mp4" : "fundal-luminos.mp4";
-    const targetPoster = isDarkMode ? "poster-dark.jpg" : "poster-light.jpg";
+    const targetPoster = isDarkMode ? "poster-dark.png" : "poster-light.png";
 
     // Reîncărcăm doar dacă sursa este diferită de cea activă
     if (!videoSource.src.includes(targetSource)) {

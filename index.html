@@ -35,16 +35,17 @@
     <!-- Stiluri -->
     <link rel="stylesheet" href="style.css" />
     
-    <!-- Optimizare Google Fonts (Preconnect) -->
+    <!-- Optimizare Google Fonts (Preconnect + Încărcare Asincronă Non-Blocking) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" media="print" onload="this.media='all'" />
+    <noscript>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" />
+    </noscript>
   </head>
   <body class="dark-mode">
-    <!-- SINGLE DYNAMIC VIDEO CONTAINER (Previne descărcarea dublă de date) -->
+    <!-- SINGLE DYNAMIC VIDEO CONTAINER -->
     <div class="container">
       <video id="bg-video" autoplay loop muted playsinline class="bg-video">
         <source id="video-source" type="video/mp4" />
@@ -111,7 +112,7 @@
         <!-- COLOANA 1: BIO -->
         <section class="island bio-island glass reveal">
           <div class="avatar-container">
-            <img src="eu.jpg" alt="Mera Alin David" class="profile-avatar" onerror="this.parentElement.style.display='none';" />
+            <img src="eu.png" alt="Mera Alin David" class="profile-avatar" onerror="this.parentElement.style.display='none';" />
           </div>
 
           <span class="label">Salut, sunt Alin David.</span>
