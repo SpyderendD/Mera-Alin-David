@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Locația Sitemap-ului tău
+Sitemap: https://mera-alin-david.vercel.app/sitemap.xml

@@ -10,9 +10,9 @@ const NOUTATI = [
     },
     {
         data: "22 Aug 2026",
-        text: "Am scris o poezie: Forfota",
+        text: "Am postat o poezie nouă în secțiunea de creație literară.",
         icon: "✍️",
-        link: "https://poezie.ro/atelier/alin-david-mera/poezie/14202822/forfota"
+        link: "https://invatam-impreuna.vercel.app/"
     },
     {
         data: "18 Aug 2026",
@@ -50,22 +50,23 @@ document.addEventListener('DOMContentLoaded', renderNews);
 
 
 // =========================================================================
-//        MENIU BURGER PENTRU MOBIL
+//        MENIU BURGER CU EXTINDERE INTEGRATĂ PENTRU MOBIL
 // =========================================================================
 const burgerBtn = document.getElementById('burger-btn');
-const mobileMenu = document.getElementById('mobile-menu');
+const topNav = document.querySelector('.top-nav');
 
-if (burgerBtn && mobileMenu) {
+if (burgerBtn && topNav) {
     burgerBtn.addEventListener('click', () => {
-        const isOpen = burgerBtn.classList.toggle('open');
-        mobileMenu.classList.toggle('open');
+        const isOpen = topNav.classList.toggle('open');
+        burgerBtn.classList.toggle('open');
         burgerBtn.setAttribute('aria-expanded', isOpen);
     });
 
-    mobileMenu.querySelectorAll('a').forEach(link => {
+    // Închidem navbar-ul extins automat la apăsarea oricărui link
+    topNav.querySelectorAll('.nav-center a').forEach(link => {
         link.addEventListener('click', () => {
+            topNav.classList.remove('open');
             burgerBtn.classList.remove('open');
-            mobileMenu.classList.remove('open');
             burgerBtn.setAttribute('aria-expanded', 'false');
         });
     });
@@ -82,13 +83,11 @@ modeToggle.addEventListener('change', () => {
     if (modeToggle.checked) {
         document.body.classList.remove('light-mode');
         document.body.classList.add('dark-mode');
-        // Repornim forțat video-ul de fundal întunecat pentru browserele mobile care îl pun în repaus
         const darkVideo = document.getElementById('video-dark');
         if (darkVideo) darkVideo.play().catch(() => {});
     } else {
         document.body.classList.add('light-mode');
         document.body.classList.remove('dark-mode');
-        // Repornim forțat video-ul de fundal luminos pentru browserele mobile care îl pun în repaus
         const lightVideo = document.getElementById('video-light');
         if (lightVideo) lightVideo.play().catch(() => {});
     }
@@ -114,3 +113,56 @@ if (window.matchMedia('(pointer: fine)').matches) {
         });
     });
 }
+
+
+// =========================================================================
+//         EFECT MAGNETIC PE DESKTOP PENTRU BUTOANE/SOCIALS
+// =========================================================================
+const magnets = document.querySelectorAll('.social-card, .uiverse-launch');
+if (window.matchMedia('(pointer: fine)').matches) {
+    magnets.forEach(btn => {
+        btn.addEventListener('mousemove', (e) => {
+            const bound = btn.getBoundingClientRect();
+            const x = e.clientX - bound.left - bound.width / 2;
+            const y = e.clientY - bound.top - bound.height / 2;
+            
+            btn.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px) scale(1.06)`;
+        });
+        
+        btn.addEventListener('mouseleave', () => {
+            btn.style.transform = ''; 
+        });
+    });
+}
+
+
+// =========================================================================
+//         SCROLL REVEAL NATIV (INTERSECTION OBSERVER)
+// =========================================================================
+const revealElements = document.querySelectorAll('.reveal');
+if (revealElements.length > 0) {
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('revealed');
+                observer.unobserve(entry.target); 
+            }
+        });
+    }, { 
+        threshold: 0.12 
+    });
+
+    revealElements.forEach(el => revealObserver.observe(el));
+}
+
+
+// =========================================================================
+//         BARĂ DE NAVIGAȚIE LIPICIOASĂ (SHRINK ON SCROLL)
+// =========================================================================
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 20) {
+        document.body.classList.add('scrolled');
+    } else {
+        document.body.classList.remove('scrolled');
+    }
+}, { passive: true });

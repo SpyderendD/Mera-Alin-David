@@ -12,12 +12,19 @@
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://mera-alin-david.vercel.app/" />
 
+    <!-- INTEGRARE FAVICON PACK (De pe favicon.io + site.webmanifest) -->
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+    <link rel="manifest" href="site.webmanifest" />
+    <link rel="shortcut icon" href="favicon.ico" />
+
     <!-- Open Graph / Meta-taguri pentru rețele sociale -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://mera-alin-david.vercel.app/" />
     <meta property="og:title" content="Mera Alin David // Spyderend" />
     <meta property="og:description" content="Portofoliul personal al lui Mera Alin David (Spyderend). Dezvoltator web din România." />
-    <meta property="og:image" content="favicon.png" />
+    <meta property="og:image" content="apple-touch-icon.png" />
 
     <!-- Twitter Card -->
     <meta property="twitter:card" content="summary_large_image" />
@@ -25,8 +32,7 @@
     <meta property="twitter:title" content="Mera Alin David // Spyderend" />
     <meta property="twitter:description" content="Portofoliul personal al lui Mera Alin David. Dezvoltator web din România." />
 
-    <!-- Favicon și Stiluri -->
-    <link rel="icon" type="image/png" href="favicon.png" />
+    <!-- Stiluri -->
     <link rel="stylesheet" href="style.css" />
     
     <!-- Optimizare Google Fonts (Preconnect) -->
@@ -38,71 +44,69 @@
     />
   </head>
   <body class="dark-mode">
-    <!-- CONTAINER FUNDAL VIDEOCLIPURI -->
+    <!-- CONTAINER FUNDAL VIDEOCLIPURI (FĂRĂ BLUR PE EL) -->
     <div class="container">
-      <video id="video-dark" autoplay loop muted playsinline class="bg-video">
+      <video id="video-dark" autoplay loop muted playsinline poster="poster-dark.jpg" class="bg-video">
         <source src="fundal-intunecat.mp4" type="video/mp4" />
       </video>
-      <video id="video-light" autoplay loop muted playsinline class="bg-video">
+      <video id="video-light" autoplay loop muted playsinline poster="poster-light.jpg" class="bg-video">
         <source src="fundal-luminos.mp4" type="video/mp4" />
       </video>
     </div>
 
-    <!-- MENIU EXTENSIBIL PENTRU MOBIL -->
-    <div class="mobile-menu" id="mobile-menu">
-      <a href="#proiecte">PROIECTE</a>
-      <a href="https://invatam-impreuna.vercel.app/eu" target="_blank" rel="noopener">DESPRE MINE</a>
-      <a href="https://invatam-impreuna.vercel.app/" target="_blank" rel="noopener">ÎNVĂȚĂM ÎMPREUNĂ</a>
-    </div>
-
     <div class="ui-container">
-      <!-- NAVBAR -->
+      <!-- NAVBAR EXTENSIBIL STIL APPLE (Conține meniul mobil în interior) -->
       <nav class="glass top-nav">
-        <div class="nav-left">
-          <div class="brand">SPYDEREND <small>Mera Alin David</small></div>
+        <!-- Rândul principal al navbar-ului -->
+        <div class="nav-container-inner">
+          <div class="nav-left">
+            <div class="brand">SPYDEREND <small>Mera Alin David</small></div>
+          </div>
+          
+          <div class="nav-right">
+            <label class="theme-switch">
+              <input
+                class="theme-switch__checkbox"
+                type="checkbox"
+                id="mode-toggle"
+                checked
+                aria-label="Comutator mod întunecat/luminos"
+                title="Comutator mod întunecat/luminos"
+              />
+              <div class="theme-switch__container">
+                <div class="theme-switch__clouds"></div>
+                <div class="theme-switch__circle-container">
+                  <div class="theme-switch__sun-moon-container">
+                    <div class="theme-switch__moon">
+                      <div class="theme-switch__spot"></div>
+                      <div class="theme-switch__spot"></div>
+                      <div class="theme-switch__spot"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </label>
+
+            <!-- BUTON MENIU BURGER PENTRU TELEFON -->
+            <button class="burger-menu" id="burger-btn" aria-label="Meniu" aria-expanded="false">
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+          </div>
         </div>
+
+        <!-- LISTA DE LINKURI CARE COBOARĂ INTEGRAT PRIN NAVBAR PE MOBIL -->
         <div class="nav-center">
           <a href="#proiecte">PROIECTE</a>
           <a href="https://invatam-impreuna.vercel.app/eu" target="_blank" rel="noopener">DESPRE MINE</a>
           <a href="https://invatam-impreuna.vercel.app/" target="_blank" rel="noopener">ÎNVĂȚĂM ÎMPREUNĂ</a>
         </div>
-        <div class="nav-right">
-          <label class="theme-switch">
-            <input
-              class="theme-switch__checkbox"
-              type="checkbox"
-              id="mode-toggle"
-              checked
-              aria-label="Comutator mod întunecat/luminos"
-              title="Comutator mod întunecat/luminos"
-            />
-            <div class="theme-switch__container">
-              <div class="theme-switch__clouds"></div>
-              <div class="theme-switch__circle-container">
-                <div class="theme-switch__sun-moon-container">
-                  <div class="theme-switch__moon">
-                    <div class="theme-switch__spot"></div>
-                    <div class="theme-switch__spot"></div>
-                    <div class="theme-switch__spot"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </label>
-
-          <!-- BUTON MENIU BURGER PENTRU TELEFON -->
-          <button class="burger-menu" id="burger-btn" aria-label="Meniu" aria-expanded="false">
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
-        </div>
       </nav>
 
       <main class="panoramic-view">
         <!-- COLOANA 1: BIO -->
-        <section class="island bio-island glass">
-          <!-- CONTAINER POZĂ PROFIL (Se ascunde automat dacă fișierul eu.jpg nu există) -->
+        <section class="island bio-island glass reveal">
           <div class="avatar-container">
             <img src="eu.jpg" alt="Mera Alin David" class="profile-avatar" onerror="this.parentElement.style.display='none';" />
           </div>
@@ -122,20 +126,21 @@
               class="w-item glass"
               target="_blank"
               rel="noopener"
-              >🧁 Sweet Cakes</a
+              >🧁 Sweet Cakes by Gabriella</a
             >
+            <!-- Actualizat conform cerinței la "Dimensionare Gaze Naturale" -->
             <a
               href="https://www.dimensionare-gaze-naturale.ro/"
               class="w-item glass"
               target="_blank"
               rel="noopener"
-              >⚙️ Gaze Naturale</a
+              >⚙️ Dimensionare Gaze Naturale</a
             >
           </div>
         </section>
 
         <!-- COLOANA 2: PROIECT CENTRAL -->
-        <section id="proiecte" class="island focal-island glass">
+        <section id="proiecte" class="island focal-island glass reveal">
           <div class="focal-content">
             <div class="floating-books" aria-hidden="true">📚</div>
             <h2>Învățăm Împreună</h2>
@@ -151,10 +156,10 @@
           </div>
         </section>
 
-        <!-- COLOANA 3: STRUCTURĂ VERTICALĂ -->
+        <!-- COLOANA 3: STRUCTURĂ VERTICALĂ (Social + News sub el) -->
         <div class="right-column">
           <!-- SOCIAL MEDIA -->
-          <section class="island contact-island glass">
+          <section class="island contact-island glass reveal">
             <p class="label">HAI SĂ VORBIM</p>
 
             <div class="social-orbit">
@@ -225,7 +230,7 @@
           </section>
 
           <!-- NOUTĂȚI -->
-          <section class="island news-island glass">
+          <section class="island news-island glass reveal">
             <p class="label">Noutăți & Activitate</p>
             <div class="news-container" id="news-container">
               <!-- JavaScript generează dinamic elementele aici -->
