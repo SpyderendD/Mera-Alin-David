@@ -69,7 +69,6 @@ html.light-mode::-webkit-scrollbar-thumb {
   inset: 0; 
   z-index: 2; /* Deasupra video, asigură doar masca transparentă de contrast */
   background-color: var(--bg-overlay); 
-  /* FĂRĂ BLUR AICI (Fundalul video rămâne 100% clar) */
 }
 
 /* VIDEOCLIPURI */
@@ -81,15 +80,7 @@ html.light-mode::-webkit-scrollbar-thumb {
   height: 100%;
   object-fit: cover;
   object-position: center bottom; 
-  display: none; 
-}
-
-body.dark-mode #video-dark {
-  display: block;
-}
-
-body.light-mode #video-light {
-  display: block;
+  display: block; /* Afișat de JS dinamic */
 }
 
 /* --- DASHBOARD UI --- */
@@ -338,7 +329,7 @@ h2 {
   margin-bottom: 12px;
 }
 
-/* GRADIENT PE TEXT (2b) */
+/* GRADIENT PE TEXT */
 .accent { 
   background: var(--accent-grad);
   -webkit-background-clip: text;
@@ -380,7 +371,7 @@ body.light-mode .w-item {
   transform: translateY(1px) scale(0.97);
 }
 
-/* Focal Island (Mijloc) */
+/* Focal Island (Mijloc - Cerc pe desktop) */
 .focal-island { 
   width: 100%;
   max-width: 380px;

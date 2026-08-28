@@ -74,22 +74,41 @@ if (burgerBtn && topNav) {
 
 
 // =========================================================================
-//                   GESTIONARE AN ȘI TEMĂ (LIGHT/DARK)
+//                   GESTIONARE SURSĂ VIDEO DINAMICĂ (LIGHT/DARK)
 // =========================================================================
 document.getElementById('year').textContent = new Date().getFullYear();
+
+const bgVideo = document.getElementById('bg-video');
+const videoSource = document.getElementById('video-source');
+
+// Funcție de optimizare a descărcării: comută sursa dintr-un singur element video
+const updateVideoSource = (isDarkMode) => {
+    if (!bgVideo || !videoSource) return;
+    const targetSource = isDarkMode ? "fundal-intunecat.mp4" : "fundal-luminos.mp4";
+    const targetPoster = isDarkMode ? "poster-dark.jpg" : "poster-light.jpg";
+
+    // Reîncărcăm doar dacă sursa este diferită de cea activă
+    if (!videoSource.src.includes(targetSource)) {
+        videoSource.src = targetSource;
+        bgVideo.poster = targetPoster;
+        bgVideo.load();
+        bgVideo.play().catch(() => {});
+    }
+};
+
+// Inițializăm sursa corectă la prima încărcare a paginii
+updateVideoSource(true);
 
 const modeToggle = document.getElementById('mode-toggle');
 modeToggle.addEventListener('change', () => {
     if (modeToggle.checked) {
         document.body.classList.remove('light-mode');
         document.body.classList.add('dark-mode');
-        const darkVideo = document.getElementById('video-dark');
-        if (darkVideo) darkVideo.play().catch(() => {});
+        updateVideoSource(true);
     } else {
         document.body.classList.add('light-mode');
         document.body.classList.remove('dark-mode');
-        const lightVideo = document.getElementById('video-light');
-        if (lightVideo) lightVideo.play().catch(() => {});
+        updateVideoSource(false);
     }
 });
 

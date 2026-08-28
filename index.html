@@ -12,7 +12,7 @@
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://mera-alin-david.vercel.app/" />
 
-    <!-- INTEGRARE FAVICON PACK (De pe favicon.io + site.webmanifest) -->
+    <!-- INTEGRARE FAVICON PACK -->
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
@@ -44,20 +44,23 @@
     />
   </head>
   <body class="dark-mode">
-    <!-- CONTAINER FUNDAL VIDEOCLIPURI (FĂRĂ BLUR PE EL) -->
+    <!-- SINGLE DYNAMIC VIDEO CONTAINER (Previne descărcarea dublă de date) -->
     <div class="container">
-      <video id="video-dark" autoplay loop muted playsinline poster="poster-dark.jpg" class="bg-video">
-        <source src="fundal-intunecat.mp4" type="video/mp4" />
-      </video>
-      <video id="video-light" autoplay loop muted playsinline poster="poster-light.jpg" class="bg-video">
-        <source src="fundal-luminos.mp4" type="video/mp4" />
+      <video id="bg-video" autoplay loop muted playsinline class="bg-video">
+        <source id="video-source" type="video/mp4" />
       </video>
     </div>
 
+    <!-- MENIU EXTENSIBIL PLUTITOR SUB NAVBAR -->
+    <div class="mobile-menu" id="mobile-menu">
+      <a href="#proiecte">PROIECTE</a>
+      <a href="https://invatam-impreuna.vercel.app/eu" target="_blank" rel="noopener">DESPRE MINE</a>
+      <a href="https://invatam-impreuna.vercel.app/" target="_blank" rel="noopener">ÎNVĂȚĂM ÎMPREUNĂ</a>
+    </div>
+
     <div class="ui-container">
-      <!-- NAVBAR EXTENSIBIL STIL APPLE (Conține meniul mobil în interior) -->
+      <!-- NAVBAR -->
       <nav class="glass top-nav">
-        <!-- Rândul principal al navbar-ului -->
         <div class="nav-container-inner">
           <div class="nav-left">
             <div class="brand">SPYDEREND <small>Mera Alin David</small></div>
@@ -96,7 +99,7 @@
           </div>
         </div>
 
-        <!-- LISTA DE LINKURI CARE COBOARĂ INTEGRAT PRIN NAVBAR PE MOBIL -->
+        <!-- LISTA DE LINKURI PENTRU EXTINDERE PE MOBIL -->
         <div class="nav-center">
           <a href="#proiecte">PROIECTE</a>
           <a href="https://invatam-impreuna.vercel.app/eu" target="_blank" rel="noopener">DESPRE MINE</a>
@@ -128,7 +131,6 @@
               rel="noopener"
               >🧁 Sweet Cakes by Gabriella</a
             >
-            <!-- Actualizat conform cerinței la "Dimensionare Gaze Naturale" -->
             <a
               href="https://www.dimensionare-gaze-naturale.ro/"
               class="w-item glass"
@@ -156,7 +158,7 @@
           </div>
         </section>
 
-        <!-- COLOANA 3: STRUCTURĂ VERTICALĂ (Social + News sub el) -->
+        <!-- COLOANA 3: STRUCTURĂ VERTICALĂ -->
         <div class="right-column">
           <!-- SOCIAL MEDIA -->
           <section class="island contact-island glass reveal">
