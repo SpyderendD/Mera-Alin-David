@@ -4,19 +4,19 @@
 const NOUTATI = [
     {
         data: "28 Aug 2026",
-        text: "Am regândit complet structura adaptivă! Acum site-ul se așază în 3 coloane pe desktop și într-un feed optimizat pe mobil.",
+        text: "Am realizat acest site central.",
         icon: "🚀",
         link: "#"
     },
     {
-        data: "22 Aug 2026",
-        text: "Am postat o poezie nouă în secțiunea de creație literară.",
+        data: "03 Iun 2026",
+        text: "Am scris poezia: Forfota",
         icon: "✍️",
-        link: "https://invatam-impreuna.vercel.app/"
+        link: "https://poezie.ro/atelier/alin-david-mera/poezie/14202822/forfota"
     },
     {
-        data: "18 Aug 2026",
-        text: "Am publicat un nou set de lecții interactive pentru elevi.",
+        data: "05 Mai 2026",
+        text: "Am publicat un nou set de lecții interactive.",
         icon: "📚",
         link: "https://invatam-impreuna.vercel.app/"
     }
